@@ -14,4 +14,14 @@ create => .gitignore file => inside it write
 -------------------------------------------------------------
 install => Postman
 -------------------------------------------------------------
+(http://localhost:8080/name/john)
+app.get("/name/:name,()=>{res.send("Hello " + req.params.name)})
+
+Query String
+http://localhost:8080/?name=john
+app.get("/",()=>{res.send("Hello " + req.query.name)})
+
+//? http://localhost:8080/?name=john&age=21
+app.get("/",()=>{"Hello " + req.query.name + " " + req.query.age})
+-------------------------------------------------------------
 

@@ -12,3 +12,6 @@ create => .gitignore file => inside it write
 /node_modules
 .gitignore
 -------------------------------------------------------------
+install => Postman
+-------------------------------------------------------------
+

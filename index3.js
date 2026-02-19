@@ -1,8 +1,8 @@
 import express from "express";
 const app = express();
 app.listen(8080, () => {
-    console.log("server running");
-})
+  console.log("server running");
+});
 
 app.get("/", (req, res) => {
   console.log(req.url);
@@ -10,5 +10,6 @@ app.get("/", (req, res) => {
 });
 
 app.get("/home", (req, res) => {
-    res.send("response from server for /home")
-})
+  console.log(req.url);
+  res.send("response from server for /home");
+});

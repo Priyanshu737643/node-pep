@@ -17,5 +17,8 @@
     "url": "https://github.com/Priyanshu737643/node-pep/issues"
   },
   "homepage": "https://github.com/Priyanshu737643/node-pep#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }

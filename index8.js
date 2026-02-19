@@ -28,6 +28,8 @@ let users = [
   },
 ];
 
+//! POST
+//? http://localhost:8080/
 app.post("/", (req, res) => {
   // console.log(req.body);
   const user = req.body;
@@ -35,11 +37,21 @@ app.post("/", (req, res) => {
   res.json(users);
 });
 
+//! DELETE
+//? http://localhost:8080/1
+app.delete("/:id", (req, res) => {
+    const user = users.filter((user) => user.id != Number(req.params.id));
+    if (user) {
+        users.push(user);
+        res.send(user)
+    }
+})
+
+//! GET
+//? http://localhost:8080/1
 app.get("/:id", (req, res) => {
     const user = users.find((user) => user.id === Number(req.params.id));
     if (user) {
         res.send(user);
     }
 });
-
-

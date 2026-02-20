@@ -12,7 +12,7 @@ app.listen(8080, () => {
 // app.use(greet);
 
 //? Middleware
-app.use(express.json());  //? convert: json => js object
+app.use(express.json()); //? convert: json => js object
 
 let users = [
   {
@@ -39,7 +39,7 @@ let users = [
 //? http://localhost:8080/
 app.get("/", (req, res) => {
   res.json(users);
-})
+});
 
 //! POST
 //? http://localhost:8080/
@@ -53,18 +53,15 @@ app.post("/", (req, res) => {
 //! DELETE
 //? http://localhost:8080/1
 app.delete("/:id", (req, res) => {
-    const user = users.filter((user) => user.id != Number(req.params.id));
-    if (user) {
-        users.push(user);
-        res.send(user)
-    }
-})
+  users = users.filter((user) => user.id !== Number(req.params.id));
+  res.json(users);
+});
 
 //! GET
 //? http://localhost:8080/1
 app.get("/:id", (req, res) => {
-    const user = users.find((user) => user.id === Number(req.params.id));
-    if (user) {
-        res.send(user);
-    }
+  const user = users.find((user) => user.id === Number(req.params.id));
+  if (user) {
+    res.send(user);
+  }
 });

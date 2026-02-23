@@ -4,6 +4,7 @@ const app = express();
 app.listen(8080, () => console.log("server running"));
 
 app.use(express.json());
+
 const users = [];
 
 // signup
@@ -15,6 +16,7 @@ app.post("/signup", async (req, res) => {
   res.json(users);
 });
 
+//* Login Success, if Password is wrong also
 // login
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
@@ -22,12 +24,12 @@ app.post("/login", (req, res) => {
   if (found) {
     const chkPassword = bcrypt.compare(password, found.password);
     if (chkPassword) {
-      res.status(200).json({ message: "Success" });
+      res.status(200).json({ message: "Login Success" });
     } else {
       res.status(401).json({ message: "Invalid Password" });
     }
   } else {
-    res.status(401).json({ message: "Not Found" });
+    res.status(401).json({ message: "User Not Found" });
   }
 });
 

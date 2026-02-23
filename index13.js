@@ -6,6 +6,7 @@ app.listen(8080, () => console.log("server running"));
 app.use(express.json());
 const users = [];
 
+// signup
 app.post("/signup", async (req, res) => {
   const body = req.body;
   const hashPassword = await bcrypt.hash(body.password, 10);
@@ -14,6 +15,7 @@ app.post("/signup", async (req, res) => {
   res.json(users);
 });
 
+// login
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   const found = users.find((user) => user.email === email);
@@ -29,6 +31,7 @@ app.post("/login", (req, res) => {
   }
 });
 
+// users
 app.get("/users", (req, res) => {
   res.json(users);
 });

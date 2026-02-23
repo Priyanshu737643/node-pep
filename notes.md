@@ -25,3 +25,20 @@ app.get("/",()=>{res.send("Hello " + req.query.name)})
 app.get("/",()=>{"Hello " + req.query.name + " " + req.query.age})
 -------------------------------------------------------------
 REST API  =>  
+-------------------------------------------------------------
+
+
+// 🔹 ES Modules (ES6)
+// - Uses: import / export
+// - Modern JavaScript standard
+// - Used in frontend (React, Next.js) and modern Node.js
+// - Requires "type": "module" in package.json
+// - Must use file extension (.js) in imports
+
+
+// 🔹 CommonJS (CJS)
+// - Uses: require() / module.exports
+// - Older Node.js module system
+// - Default in Node.js (without "type": "module")
+// - No need to write file extension in require
+// - Not used in browsers

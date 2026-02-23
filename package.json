@@ -19,6 +19,6 @@
   "homepage": "https://github.com/Priyanshu737643/node-pep#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^4.22.1"
   }
 }

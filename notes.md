@@ -42,3 +42,7 @@ REST API  =>
 // - Default in Node.js (without "type": "module")
 // - No need to write file extension in require
 // - Not used in browsers
+
+-------------------------------------------------------------
+
+npm i bcrypt  (to encrypt the password)

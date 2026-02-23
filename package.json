@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Priyanshu737643/node-pep#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "express": "^4.22.1"
   }
 }

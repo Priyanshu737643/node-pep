@@ -1,7 +1,10 @@
 import express from "express";
+import products from "../models/productModel.js";
+products;
 
 const getProduct = (req, res) => {
-  res.send("Get request of Product Router");
+  // res.send("Get request of Product Router");
+  res.send({ products });
 };
 
 const postProduct = (req, res) => {

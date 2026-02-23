@@ -16,8 +16,10 @@ const users = [];
 // signup
 app.post("/signup", (req, res) => {
   const body = req.body;
+  //? hash password
   const hasPassword = bcrypt.hashSync(body.password, 10);
   body.password = hasPassword;
+  //? push hash password
   users.push(body);
   res.json(users);
 });
@@ -25,11 +27,14 @@ app.post("/signup", (req, res) => {
 // login
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
+  //? check same email
   const user = users.find((u) => u.email === email);
+  //? check same password
   const ckPassword = await bcrypt.compare(password, user.password);
   if (ckPassword)
     res.json({
       message: "login successful",
+      //? create token
       token: jwt.sign(user, secretKey, { expiresIn: "1h" }),
     });
   else res.status(401).json({ message: "invalid credentials" });
@@ -40,7 +45,7 @@ app.get("/", middleware, (req, res) => {
   res.json({ message: "welcome to home page" });
 });
 
-// root
+// users
 app.get("/users", middleware, authorize("admin", "manager"), (req, res) => {
   res.json(users);
 });

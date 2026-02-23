@@ -1,7 +1,11 @@
 import express from "express";
 
 const getProduct = (req, res) => {
-  res.send("This is post request of user router");
+  res.send("Get request of Product Router");
 };
 
-export default getProduct;
+const postProduct = (req, res) => {
+  res.send("This is post request of product router");
+};
+
+export { getProduct, postProduct };

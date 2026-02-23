@@ -4,4 +4,8 @@ const getUser = (req, res) => {
   res.send("Get request of User Router");
 };
 
-export default getUser;
+const postUser = (req, res) => {
+  res.send("This is post request of user router");
+};
+
+export { getUser, postUser };

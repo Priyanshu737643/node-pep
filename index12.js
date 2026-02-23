@@ -1,10 +1,10 @@
 //! Router
 
 import express from "express";
-import userRouter from "./routes/userRoutes.js";
-import productRouter from "./routes/productRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import productRoutes from "./routes/productRoutes.js";
 const app = express();
 app.listen(8080, () => console.log("Server running"));
 
-app.use("/api/users", userRouter);
-app.use("/api/products", productRouter);
+app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);

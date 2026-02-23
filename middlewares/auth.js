@@ -2,9 +2,11 @@
 
 const middleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
-  if (!authHeader)
+  if (!authHeader) {
     return res.status(401).json({ message: "Authorization header missing" });
-  const token = authHeader.split(" ")[1];
+  } else {
+    const token = authHeader.split(" ")[1];
+  }
   try {
     const user = jwt.verify(token, secretKey);
     console.log("middleware executed");

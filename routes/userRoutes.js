@@ -1,10 +1,9 @@
 import express from "express";
+import getUser from "../controllers/userController.js";
 const userRouter = express.Router();
 
 // userRouter
-userRouter.get("/", (req, res) => {
-  res.send("Get request of User Router");
-});
+userRouter.get("/", getUser);
 
 userRouter.post("/", (req, res) => {
   res.send("This is post request of user router");

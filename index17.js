@@ -4,6 +4,7 @@ const app = express();
 app.listen(8080, console.log("server running"));
 
 const dbConnect = async () => {
+  //? mongoose.connect() returns promise = use await
   await mongoose.connect("mongodb://localhost:27017/lpu26a");
 };
 
